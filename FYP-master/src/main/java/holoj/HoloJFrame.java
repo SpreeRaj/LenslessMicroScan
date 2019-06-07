@@ -856,44 +856,44 @@ public class HoloJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JCheckBox amplitudeCB;
-    private javax.swing.JCheckBox butterCB;
-    private javax.swing.JTextField distanceTF;
-    private javax.swing.JTextField dxTF;
-    private javax.swing.JTextField dyTF;
-    private javax.swing.JButton holoB;
-    private javax.swing.JComboBox holoCB;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JCheckBox amplitudeCB;//amplitude	
+    private javax.swing.JCheckBox butterCB;//butterworth filter
+    private javax.swing.JTextField distanceTF;//distance
+    private javax.swing.JTextField dxTF;//dx
+    private javax.swing.JTextField dyTF;//dy
+    private javax.swing.JButton holoB;//hologram ....
+    private javax.swing.JComboBox holoCB;//hologram dropdown box
+    private javax.swing.JButton jButton1;//reset file list
+    private javax.swing.JButton jButton2;// UnWrap
+    private javax.swing.JButton jButton3;// 3D graph
+    private javax.swing.JButton jButton4;//preview points
+    private javax.swing.JButton jButton5;// reconstruct
+    private javax.swing.JButton jButton6;// Numerical Propagation
+    private javax.swing.JLabel jLabel1;//Path
+    private javax.swing.JLabel jLabel10;//dy
+    private javax.swing.JLabel jLabel11;//wavelength
+    private javax.swing.JLabel jLabel12;//distance
+    private javax.swing.JLabel jLabel2;//Hologram
+    private javax.swing.JLabel jLabel3;//Reference
+    private javax.swing.JLabel jLabel4;//Tolerance
+    private javax.swing.JLabel jLabel5;//Radius
+    private javax.swing.JLabel jLabel6;//Iterations
+    private javax.swing.JLabel jLabel7;//Extract
     //private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JButton pathB;
-    private javax.swing.JTextField pathTF;
-    private javax.swing.JCheckBox phaseCB;
-    private javax.swing.JTextField iterationsTF;
+    private javax.swing.JLabel jLabel9;//dx
+    private javax.swing.JPanel jPanel1;//files
+    private javax.swing.JPanel jPanel2;//Phase Retrieval
+    private javax.swing.JPanel jPanel3;//reconstruct
+    private javax.swing.JButton pathB;// path ...
+    private javax.swing.JTextField pathTF;// path text field
+    private javax.swing.JCheckBox phaseCB;// Phase
+    private javax.swing.JTextField iterationsTF;//iterations
     //private javax.swing.JTextField ratioTF;
-    private javax.swing.JComboBox refCB;
-    private javax.swing.JButton rholoB;
-    private javax.swing.JTextField wavelengthTF;
-    private javax.swing.JTextField toleranceTF;
-    private javax.swing.JTextField sigmaTF;
+    private javax.swing.JComboBox refCB;//Reference dropdown box
+    private javax.swing.JButton rholoB;//Reference ...
+    private javax.swing.JTextField wavelengthTF;//wavelength
+    private javax.swing.JTextField toleranceTF;//tollerance
+    private javax.swing.JTextField sigmaTF;//radius
     // End of variables declaration                  
     
 }
