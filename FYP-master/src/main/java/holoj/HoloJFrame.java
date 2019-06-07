@@ -62,13 +62,13 @@ public class HoloJFrame extends javax.swing.JFrame {
     private void operate(){//DONT EDIT
 		holo=getHologramProcessor();
 		ref=getReferenceProcessor();
-        dx=getDouble(dxTF);
-        dy=getDouble(dyTF);
-        Tolerance=getDouble(toleranceTF);
-        wavelength=getDouble(wavelengthTF);
-        distance=getDouble(distanceTF);
-        Sigma=getInteger(sigmaTF);
-        Iterations=getInteger(iterationsTF);
+        dx=getDouble(dxTextField);
+        dy=getDouble(dyTextField);
+        Tolerance=getDouble(toleranceTextField);
+        wavelength=getDouble(wavelengthTextField);
+        distance=getDouble(distanceTextField);
+        Sigma=getInteger(sigmaTextField);
+        Iterations=getInteger(iterationsTextField);
          
         if (holo == null) 
             throw new ArrayStoreException("reconstruct: No hologram selected.");
@@ -96,8 +96,8 @@ public class HoloJFrame extends javax.swing.JFrame {
             ref=getReferenceProcessor();
 			//imageCal.pixelWidth *= ratio;
             //imageCal.pixelHeight *= ratio;
-			wavelength=getDouble(wavelengthTF);
-			distance=getDouble(distanceTF);
+			wavelength=getDouble(wavelengthTextField);
+			distance=getDouble(distanceTextField);
             if((ref==null) && (holo == null))
             {
                 throw new ArrayStoreException("reconstruct: No hologram or reference selected.");
@@ -114,11 +114,11 @@ public class HoloJFrame extends javax.swing.JFrame {
 
     private void previewImage() {
         holo=getHologramProcessor();
-        Tolerance=getDouble(toleranceTF);
-        wavelength=getDouble(wavelengthTF);
-        distance=getDouble(distanceTF);
-        Sigma=getInteger(sigmaTF);
-        Iterations=getInteger(iterationsTF);
+        Tolerance=getDouble(toleranceTextField);
+        wavelength=getDouble(wavelengthTextField);
+        distance=getDouble(distanceTextField);
+        Sigma=getInteger(sigmaTextField);
+        Iterations=getInteger(iterationsTextField);
         HoloJUtils.previewPoints(holo,distance,wavelength,Iterations,Tolerance,Sigma);
 
     }
@@ -128,8 +128,8 @@ public class HoloJFrame extends javax.swing.JFrame {
     public HoloJFrame() {
         Java2.setSystemLookAndFeel();
         initComponents();
-        initFileList(holoCB);
-        initFileList(refCB);
+        initFileList(hologramComboBox);
+        initFileList(referenceComboBox);
 		
     }
    
@@ -161,7 +161,7 @@ public class HoloJFrame extends javax.swing.JFrame {
         if (!hasIt(cb, tmp)) cb.addItem(tmp);
         cb.setSelectedItem(tmp);
         cb.removeItem(standardItem);
-        pathTF.setText(od.getDirectory());
+        pathTextField.setText(od.getDirectory());
     }
     
     private void setDir(JTextField tf){
@@ -184,7 +184,7 @@ public class HoloJFrame extends javax.swing.JFrame {
     }
     
     private ImagePlus getImage(JComboBox cb){
-        String dir=pathTF.getText();
+        String dir=pathTextField.getText();
         String name=cb.getSelectedItem().toString();
         ImagePlus imp;
         
@@ -198,19 +198,19 @@ public class HoloJFrame extends javax.swing.JFrame {
     
     private HoloJProcessor getHologramProcessor(){
         HoloJProcessor proc=null;
-        ImagePlus imp=getImage(holoCB);
+        ImagePlus imp=getImage(hologramComboBox);
         if(imp!=null) {
             imageCal = imp.getCalibration().copy();
             title = imp.getTitle();
-            proc=new HoloJProcessor(imp.getProcessor(),getDouble(dxTF),getDouble(dyTF));
+            proc=new HoloJProcessor(imp.getProcessor(),getDouble(dxTextField),getDouble(dyTextField));
         }
         return proc;
     }
     
     private HoloJProcessor getReferenceProcessor(){
         HoloJProcessor proc=null;
-        ImagePlus imp=getImage(refCB);
-        if(imp!=null) proc=new HoloJProcessor(imp.getProcessor(),getDouble(dxTF),getDouble(dyTF));
+        ImagePlus imp=getImage(referenceComboBox);
+        if(imp!=null) proc=new HoloJProcessor(imp.getProcessor(),getDouble(dxTextField),getDouble(dyTextField));
         return proc;
     }
 
@@ -257,195 +257,195 @@ public class HoloJFrame extends javax.swing.JFrame {
     private void initComponents() {
 		
 
-        jPanel1 = new JPanel();
-        jLabel1 = new JLabel();
-        pathTF = new JTextField();
-        pathB = new JButton();
-        jLabel2 = new JLabel();
-        holoB = new JButton();
-        holoCB = new JComboBox();
-        jLabel3 = new JLabel();
-        refCB = new JComboBox();
-        rholoB = new JButton();
-        jButton1 = new JButton();
-        jPanel2 = new JPanel();
-        jLabel4 = new JLabel();
-        toleranceTF = new JTextField();
-        jLabel5 = new JLabel();
-        sigmaTF = new JTextField();
-        jLabel6 = new JLabel();
-        iterationsTF = new JTextField();
-        jButton4 = new javax.swing.JButton();
+        filesPanel = new JPanel();
+        pathLabel = new JLabel();
+        pathTextField = new JTextField();
+        pathSelectButton = new JButton();
+        hologramLabel = new JLabel();
+        hologramSelectButton = new JButton();
+        hologramComboBox = new JComboBox();
+        refrenceLabel = new JLabel();
+        referenceComboBox = new JComboBox();
+        refrenceSelectButton = new JButton();
+        resetFileListButton = new JButton();
+        phaseRetrievalPanel = new JPanel();
+        toleranceLabel = new JLabel();
+        toleranceTextField = new JTextField();
+        radiusLabel = new JLabel();
+        sigmaTextField = new JTextField();
+        iterationsLabel = new JLabel();
+        iterationsTextField = new JTextField();
+        previewPointsButton = new javax.swing.JButton();
         //jLabel8 = new JLabel();
         //ratioTF = new JTextField();
-        jPanel3 = new JPanel();
-        jButton5 = new JButton();
-        amplitudeCB = new JCheckBox();
-        phaseCB = new JCheckBox();
-        jLabel7 = new JLabel();
-        butterCB = new JCheckBox();
-        jButton3 = new JButton();
-        jButton6 = new JButton();
-        jButton2 = new JButton();
-		dxTF = new JTextField();
-        dyTF = new JTextField();
-        wavelengthTF = new JTextField();
-        distanceTF = new JTextField();
-        jLabel9 = new JLabel();
-        jLabel10 = new JLabel();
-        jLabel11 = new JLabel();
-        jLabel12 = new JLabel();
+        reconstructPanel = new JPanel();
+        reconstructButton = new JButton();
+        amplitudeCheckBox = new JCheckBox();
+        phaseComboBox = new JCheckBox();
+        extractLabel = new JLabel();
+        butterworthFilterCheckBox = new JCheckBox();
+        graph3DButton = new JButton();
+        numericalPropagationButton = new JButton();
+        unwrapButton = new JButton();
+		dxTextField = new JTextField();
+        dyTextField = new JTextField();
+        wavelengthTextField = new JTextField();
+        distanceTextField = new JTextField();
+        dxLabel = new JLabel();
+        dyLabel = new JLabel();
+        wavelengthLabel = new JLabel();
+        distanceLabel = new JLabel();
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HoloJ");
 
-        jPanel1.setBorder(BorderFactory.createTitledBorder("Files"));
+        filesPanel.setBorder(BorderFactory.createTitledBorder("Files"));
 
-        jLabel1.setText("Path");
+        pathLabel.setText("Path");
 
-        pathTF.setText("No Directory Selected");
-        pathTF.setMaximumSize(new Dimension(500, 20));
-        pathTF.setPreferredSize(new Dimension(50, 20));
+        pathTextField.setText("No Directory Selected");
+        pathTextField.setMaximumSize(new Dimension(500, 20));
+        pathTextField.setPreferredSize(new Dimension(50, 20));
 
-        pathB.setText("...");
-        pathB.addActionListener(new ActionListener() {
+        pathSelectButton.setText("...");
+        pathSelectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 pathBActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Hologram");
+        hologramLabel.setText("Hologram");
 
-        holoB.setText("...");
-        holoB.addActionListener(new ActionListener() {
+        hologramSelectButton.setText("...");
+        hologramSelectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 holoBActionPerformed(evt);
             }
         });
 
-        holoCB.setEditable(true);
-        holoCB.setMaximumRowCount(5);
-        holoCB.setModel(new DefaultComboBoxModel(new String[] { "No Image Selected" }));
-        holoCB.setMaximumSize(new Dimension(138, 22));
+        hologramComboBox.setEditable(true);
+        hologramComboBox.setMaximumRowCount(5);
+        hologramComboBox.setModel(new DefaultComboBoxModel(new String[] { "No Image Selected" }));
+        hologramComboBox.setMaximumSize(new Dimension(138, 22));
 
-        jLabel3.setText("Reference");
+        refrenceLabel.setText("Reference");
 
-        refCB.setEditable(true);
-        refCB.setMaximumRowCount(5);
-        refCB.setModel(new DefaultComboBoxModel(new String[] { "No Image Selected" }));
-        refCB.setMaximumSize(new Dimension(138, 22));
+        referenceComboBox.setEditable(true);
+        referenceComboBox.setMaximumRowCount(5);
+        referenceComboBox.setModel(new DefaultComboBoxModel(new String[] { "No Image Selected" }));
+        referenceComboBox.setMaximumSize(new Dimension(138, 22));
 
-        rholoB.setText("...");
-        rholoB.addActionListener(new ActionListener() {
+        refrenceSelectButton.setText("...");
+        refrenceSelectButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 rholoBActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Reset File List");
-        jButton1.addActionListener(new ActionListener() {
+        resetFileListButton.setText("Reset File List");
+        resetFileListButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
+        GroupLayout jPanel1Layout = new GroupLayout(filesPanel);
+        filesPanel.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(pathLabel)
                 .addGap(45, 45, 45)
-                .addComponent(pathTF, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
+                .addComponent(pathTextField, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
-                .addComponent(pathB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                .addComponent(pathSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
+                .addComponent(hologramLabel)
                 .addGap(6, 6, 6)
-                .addComponent(holoCB, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
+                .addComponent(hologramComboBox, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(holoB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                .addComponent(hologramSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel3)
+                .addComponent(refrenceLabel)
                 .addGap(7, 7, 7)
-                .addComponent(refCB, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
+                .addComponent(referenceComboBox, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(rholoB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                .addComponent(refrenceSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(71, 71, 71)
-                .addComponent(jButton1))
+                .addComponent(resetFileListButton))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(pathTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pathB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pathLabel)
+                    .addComponent(pathTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pathSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(holoCB, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(holoB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hologramLabel)
+                    .addComponent(hologramComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hologramSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
                 .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(refCB, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rholoB, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(refrenceLabel)
+                    .addComponent(referenceComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(refrenceSelectButton, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5)
-                .addComponent(jButton1))
+                .addComponent(resetFileListButton))
         );
 
-        jPanel2.setBorder(BorderFactory.createTitledBorder("Phase Retrieval"));
+        phaseRetrievalPanel.setBorder(BorderFactory.createTitledBorder("Phase Retrieval"));
 
-        jLabel4.setText("Tolerance");
+        toleranceLabel.setText("Tolerance");
 
-        toleranceTF.setHorizontalAlignment(JTextField.TRAILING);
-        toleranceTF.setText("3");
-        toleranceTF.addActionListener(new ActionListener() {
+        toleranceTextField.setHorizontalAlignment(JTextField.TRAILING);
+        toleranceTextField.setText("3");
+        toleranceTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 toleranceTFActionPerformed(evt);
             }
         });
-        toleranceTF.addFocusListener(new FocusAdapter() {
+        toleranceTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
 
                 toleranceTFFocusLost(evt);
             }
         });
 
-        jLabel5.setText("Radius");
+        radiusLabel.setText("Radius");
 
-        sigmaTF.setHorizontalAlignment(JTextField.TRAILING);
-        sigmaTF.setText("2");
-        sigmaTF.addActionListener(new ActionListener() {
+        sigmaTextField.setHorizontalAlignment(JTextField.TRAILING);
+        sigmaTextField.setText("2");
+        sigmaTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 sigmaTFActionPerformed(evt);
             }
         });
-        sigmaTF.addFocusListener(new FocusAdapter() {
+        sigmaTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 sigmaTFFocusLost(evt);
             }
         });
 
-        jLabel6.setText("Iterations");
+        iterationsLabel.setText("Iterations");
 
-        iterationsTF.setHorizontalAlignment(JTextField.TRAILING);
-        iterationsTF.setText("1");
-        iterationsTF.addActionListener(new ActionListener() {
+        iterationsTextField.setHorizontalAlignment(JTextField.TRAILING);
+        iterationsTextField.setText("1");
+        iterationsTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 iterationsTFActionPerformed(evt);
             }
         });
-        iterationsTF.addFocusListener(new FocusAdapter() {
+        iterationsTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 iterationsTFFocusLost(evt);
             }
         });
 
-        jButton4.setText("Preview Points");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        previewPointsButton.setText("Preview Points");
+        previewPointsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
@@ -466,15 +466,15 @@ public class HoloJFrame extends javax.swing.JFrame {
 //            }
 //        });
 
-        GroupLayout jPanel2Layout = new GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
+        GroupLayout jPanel2Layout = new GroupLayout(phaseRetrievalPanel);
+        phaseRetrievalPanel.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jLabel4)
+                .addComponent(toleranceLabel)
                 .addGap(4, 4, 4)
-                .addComponent(toleranceTF, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
+                .addComponent(toleranceTextField, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 //.addComponent(jLabel8)
                 .addGap(18, 18, 18)
@@ -482,148 +482,148 @@ public class HoloJFrame extends javax.swing.JFrame {
                     )
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jLabel5)
+                .addComponent(radiusLabel)
                 .addGap(4, 4, 4)
-                .addComponent(sigmaTF, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
+                .addComponent(sigmaTextField, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(jLabel6)
+                .addComponent(iterationsLabel)
                 .addGap(7, 7, 7)
-                .addComponent(iterationsTF, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
+                .addComponent(iterationsTextField, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(previewPointsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(toleranceTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toleranceLabel)
+                    .addComponent(toleranceTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     //.addComponent(jLabel8)
                     //.addComponent(ratioTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         )
                 .addGroup(jPanel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(sigmaTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(iterationsTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                .addComponent(jButton4))
+                    .addComponent(radiusLabel)
+                    .addComponent(sigmaTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iterationsLabel)
+                    .addComponent(iterationsTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                .addComponent(previewPointsButton))
         );
 
-        jPanel3.setBorder(BorderFactory.createTitledBorder("Reconstruct"));
+        reconstructPanel.setBorder(BorderFactory.createTitledBorder("Reconstruct"));
 
-        jButton5.setText("Reconstruct");
-        jButton5.addActionListener(new ActionListener() {
+        reconstructButton.setText("Reconstruct");
+        reconstructButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        amplitudeCB.setText("Amplitude");
-        amplitudeCB.addActionListener(new ActionListener() {
+        amplitudeCheckBox.setText("Amplitude");
+        amplitudeCheckBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 amplitudeCBActionPerformed(evt);
             }
         });
 
-        phaseCB.setText("Phase");
-        phaseCB.addActionListener(new ActionListener() {
+        phaseComboBox.setText("Phase");
+        phaseComboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 phaseCBActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("Extract:");
+        extractLabel.setText("Extract:");
 
-        butterCB.setText("Butterworth Filter");
-        butterCB.setMaximumSize(new Dimension(135, 25));
-        butterCB.setMinimumSize(new Dimension(135, 25));
-        butterCB.setPreferredSize(new Dimension(135, 25));
-        butterCB.addActionListener(new ActionListener() {
+        butterworthFilterCheckBox.setText("Butterworth Filter");
+        butterworthFilterCheckBox.setMaximumSize(new Dimension(135, 25));
+        butterworthFilterCheckBox.setMinimumSize(new Dimension(135, 25));
+        butterworthFilterCheckBox.setPreferredSize(new Dimension(135, 25));
+        butterworthFilterCheckBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 butterCBActionPerformed(evt);
             }
         });
 
-        jButton3.setText("3D graph");
-        jButton3.addActionListener(new ActionListener() {
+        graph3DButton.setText("3D graph");
+        graph3DButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Numerical Propagation");
-        jButton6.addActionListener(new ActionListener() {
+        numericalPropagationButton.setText("Numerical Propagation");
+        numericalPropagationButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("UnWrap");
-        jButton2.addActionListener(new ActionListener() {
+        unwrapButton.setText("UnWrap");
+        unwrapButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 /////////////////////////////////////////////////////////////////////////////////////////
-        dxTF.setText("0.00000160");
-        dxTF.addFocusListener(new FocusAdapter() {
+        dxTextField.setText("0.00000160");
+        dxTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 dxTFFocusLost(evt);
             }
         });
-        dxTF.addActionListener(new ActionListener() {
+        dxTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 dxTFActionPerformed(evt);
             }
         });
 
-        dyTF.setText("0.00000160");
-        dyTF.addFocusListener(new FocusAdapter() {
+        dyTextField.setText("0.00000160");
+        dyTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 dyTFFocusLost(evt);
             }
         });
-        dyTF.addActionListener(new ActionListener() {
+        dyTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 dyTFActionPerformed(evt);
             }
         });
 
-        wavelengthTF.setText("0.000000633");
-        wavelengthTF.addFocusListener(new FocusAdapter() {
+        wavelengthTextField.setText("0.000000633");
+        wavelengthTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 wavelengthTFFocusLost(evt);
             }
         });
-        wavelengthTF.addActionListener(new ActionListener() {
+        wavelengthTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 wavelengthTFActionPerformed(evt);
             }
         });
 
-        distanceTF.setText("0.001");
-        distanceTF.addFocusListener(new FocusAdapter() {
+        distanceTextField.setText("0.001");
+        distanceTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent evt) {
                 distanceTFFocusLost(evt);
             }
         });
-        distanceTF.addActionListener(new ActionListener() {
+        distanceTextField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 distanceTFActionPerformed(evt);
             }
         });
 
-        jLabel9.setText("dx");
+        dxLabel.setText("dx");
 
-        jLabel10.setText("dy");
+        dyLabel.setText("dy");
 
-        jLabel11.setText("wavelength");
+        wavelengthLabel.setText("wavelength");
 
-        jLabel12.setText("distance");
+        distanceLabel.setText("distance");
 
-        GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
+        GroupLayout jPanel3Layout = new GroupLayout(reconstructPanel);
+        reconstructPanel.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -632,35 +632,35 @@ public class HoloJFrame extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addComponent(amplitudeCB, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amplitudeCheckBox, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(jLabel7))
-                            .addComponent(phaseCB, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(butterCB, GroupLayout.PREFERRED_SIZE, 191, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(extractLabel))
+                            .addComponent(phaseComboBox, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(unwrapButton, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(butterworthFilterCheckBox, GroupLayout.PREFERRED_SIZE, 191, GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9))
+                            .addComponent(dyLabel)
+                            .addComponent(dxLabel))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addComponent(dxTF)
-                            .addComponent(dyTF))))
+                            .addComponent(dxTextField)
+                            .addComponent(dyTextField))))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(reconstructButton, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel11)
+                            .addComponent(wavelengthLabel)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(wavelengthTF, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(wavelengthTextField, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel12)
+                            .addComponent(distanceLabel)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(distanceTF, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jButton3, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton6, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(distanceTextField, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(graph3DButton, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(numericalPropagationButton, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
@@ -671,35 +671,35 @@ public class HoloJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(jLabel7)
+                                .addComponent(extractLabel)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(phaseCB, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(phaseComboBox, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(amplitudeCB)
+                                .addComponent(amplitudeCheckBox)
                                 .addGap(1, 1, 1)
-                                .addComponent(butterCB, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(butterworthFilterCheckBox, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jButton5)
+                                .addComponent(reconstructButton)
                                 .addGap(29, 29, 29)
-                                .addComponent(jButton6)))
+                                .addComponent(numericalPropagationButton)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(dxTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(wavelengthTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9)))
-                    .addComponent(jLabel11, GroupLayout.Alignment.TRAILING))
+                            .addComponent(dxTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(wavelengthTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dxLabel)))
+                    .addComponent(wavelengthLabel, GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(dyTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(distanceTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel12))
-                    .addComponent(jLabel10))
+                        .addComponent(dyTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(distanceTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(distanceLabel))
+                    .addComponent(dyLabel))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(unwrapButton)
+                    .addComponent(graph3DButton))
                 .addContainerGap())
         );
 
@@ -711,10 +711,10 @@ public class HoloJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filesPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(phaseRetrievalPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reconstructPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -723,12 +723,12 @@ public class HoloJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(filesPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(phaseRetrievalPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(reconstructPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -736,7 +736,7 @@ public class HoloJFrame extends javax.swing.JFrame {
     }// </editor-fold>                              
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void iterationsTFFocusLost(java.awt.event.FocusEvent evt) {
-        radius = getInteger(iterationsTF);
+        radius = getInteger(iterationsTextField);
     }                                  
 
 //    private void ratioTFFocusLost(java.awt.event.FocusEvent evt) {
@@ -748,7 +748,7 @@ public class HoloJFrame extends javax.swing.JFrame {
     }                             
 
     private void toleranceTFFocusLost(java.awt.event.FocusEvent evt) {
-        Tolerance = getDouble(toleranceTF);
+        Tolerance = getDouble(toleranceTextField);
     }                             
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -756,15 +756,15 @@ public class HoloJFrame extends javax.swing.JFrame {
     }                                        
 
     private void amplitudeCBActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        amplitude=getBoolean(amplitudeCB);
+        amplitude=getBoolean(amplitudeCheckBox);
     }                                           
 
     private void phaseCBActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        phase=getBoolean(phaseCB);
+        phase=getBoolean(phaseComboBox);
     }                                       
 
     private void butterCBActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        butterworth=getBoolean(butterCB);
+        butterworth=getBoolean(butterworthFilterCheckBox);
     }                                        
 
     private void sigmaTFActionPerformed(java.awt.event.ActionEvent evt) {
@@ -772,7 +772,7 @@ public class HoloJFrame extends javax.swing.JFrame {
     }                                   
 
     private void toleranceTFActionPerformed(java.awt.event.ActionEvent evt) {
-        Tolerance = getDouble(toleranceTF);
+        Tolerance = getDouble(toleranceTextField);
     }                                   
 
 //    private void ratioTFActionPerformed(java.awt.event.ActionEvent evt) {
@@ -780,24 +780,24 @@ public class HoloJFrame extends javax.swing.JFrame {
 //    }
 
     private void iterationsTFActionPerformed(java.awt.event.ActionEvent evt) {
-        radius=getInteger(iterationsTF);
+        radius=getInteger(iterationsTextField);
     }                                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        initFileList(holoCB);
-        initFileList(refCB);
+        initFileList(hologramComboBox);
+        initFileList(referenceComboBox);
     }                                        
 
     private void rholoBActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        addFileToList(refCB);
+        addFileToList(referenceComboBox);
     }                                      
 
     private void holoBActionPerformed(java.awt.event.ActionEvent evt) {                                      
-        addFileToList(holoCB);
+        addFileToList(hologramComboBox);
     }                                     
 
     private void pathBActionPerformed(java.awt.event.ActionEvent evt) {                                      
-       setDir(pathTF);
+       setDir(pathTextField);
     }                                     
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -811,7 +811,7 @@ public class HoloJFrame extends javax.swing.JFrame {
 	
 	private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         //sidebandFromFFT();
-        if (amplitudeCB.isSelected() || phaseCB.isSelected() || butterCB.isSelected())
+        if (amplitudeCheckBox.isSelected() || phaseComboBox.isSelected() || butterworthFilterCheckBox.isSelected())
 		    operate2();
         else
             JOptionPane.showMessageDialog(null, "Please select Amplitude, Phase or Butterworth Filter", "ImageJ: " + "Error", JOptionPane.INFORMATION_MESSAGE);
@@ -824,76 +824,76 @@ public class HoloJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 	private void dxTFActionPerformed(java.awt.event.ActionEvent evt) {                                     
-       dx=getDouble(dxTF);
+       dx=getDouble(dxTextField);
     }                                    
 
     private void dyTFActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        dy=getDouble(dyTF);// TODO add your handling code here:
+        dy=getDouble(dyTextField);// TODO add your handling code here:
     }                                    
 
     private void distanceTFActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        distance=getDouble(distanceTF);
+        distance=getDouble(distanceTextField);
     }                                          
 
     private void wavelengthTFActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        wavelength=getDouble(wavelengthTF);// TODO add your handling code here:
+        wavelength=getDouble(wavelengthTextField);// TODO add your handling code here:
     }                                            
 
     private void wavelengthTFFocusLost(java.awt.event.FocusEvent evt) {                                       
-        wavelength = getDouble(wavelengthTF);
+        wavelength = getDouble(wavelengthTextField);
     }                                      
 
     private void distanceTFFocusLost(java.awt.event.FocusEvent evt) {                                     
-        distance = getDouble(distanceTF);
+        distance = getDouble(distanceTextField);
     }
 
     private void dyTFFocusLost(java.awt.event.FocusEvent evt) {
-        dy = getDouble(dyTF);
+        dy = getDouble(dyTextField);
     }
 
     private void dxTFFocusLost(java.awt.event.FocusEvent evt) {
-        dx = getDouble(dxTF);
+        dx = getDouble(dxTextField);
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JCheckBox amplitudeCB;//amplitude	
-    private javax.swing.JCheckBox butterCB;//butterworth filter
-    private javax.swing.JTextField distanceTF;//distance
-    private javax.swing.JTextField dxTF;//dx
-    private javax.swing.JTextField dyTF;//dy
-    private javax.swing.JButton holoB;//hologram ....
-    private javax.swing.JComboBox holoCB;//hologram dropdown box
-    private javax.swing.JButton jButton1;//reset file list
-    private javax.swing.JButton jButton2;// UnWrap
-    private javax.swing.JButton jButton3;// 3D graph
-    private javax.swing.JButton jButton4;//preview points
-    private javax.swing.JButton jButton5;// reconstruct
-    private javax.swing.JButton jButton6;// Numerical Propagation
-    private javax.swing.JLabel jLabel1;//Path
-    private javax.swing.JLabel jLabel10;//dy
-    private javax.swing.JLabel jLabel11;//wavelength
-    private javax.swing.JLabel jLabel12;//distance
-    private javax.swing.JLabel jLabel2;//Hologram
-    private javax.swing.JLabel jLabel3;//Reference
-    private javax.swing.JLabel jLabel4;//Tolerance
-    private javax.swing.JLabel jLabel5;//Radius
-    private javax.swing.JLabel jLabel6;//Iterations
-    private javax.swing.JLabel jLabel7;//Extract
+    private javax.swing.JCheckBox amplitudeCheckBox;//amplitude	
+    private javax.swing.JCheckBox butterworthFilterCheckBox;//butterworth filter
+    private javax.swing.JTextField distanceTextField;//distance
+    private javax.swing.JTextField dxTextField;//dx
+    private javax.swing.JTextField dyTextField;//dy
+    private javax.swing.JButton hologramSelectButton;//hologram ....
+    private javax.swing.JComboBox hologramComboBox;//hologram dropdown box
+    private javax.swing.JButton resetFileListButton;//reset file list
+    private javax.swing.JButton unwrapButton;// UnWrap
+    private javax.swing.JButton graph3DButton;// 3D graph
+    private javax.swing.JButton previewPointsButton;//preview points
+    private javax.swing.JButton reconstructButton;// reconstruct
+    private javax.swing.JButton numericalPropagationButton;// Numerical Propagation
+    private javax.swing.JLabel pathLabel;//Path
+    private javax.swing.JLabel dyLabel;//dy
+    private javax.swing.JLabel wavelengthLabel;//wavelength
+    private javax.swing.JLabel distanceLabel;//distance
+    private javax.swing.JLabel hologramLabel;//Hologram
+    private javax.swing.JLabel refrenceLabel;//Reference
+    private javax.swing.JLabel toleranceLabel;//Tolerance
+    private javax.swing.JLabel radiusLabel;//Radius
+    private javax.swing.JLabel iterationsLabel;//Iterations
+    private javax.swing.JLabel extractLabel;//Extract
     //private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;//dx
-    private javax.swing.JPanel jPanel1;//files
-    private javax.swing.JPanel jPanel2;//Phase Retrieval
-    private javax.swing.JPanel jPanel3;//reconstruct
-    private javax.swing.JButton pathB;// path ...
-    private javax.swing.JTextField pathTF;// path text field
-    private javax.swing.JCheckBox phaseCB;// Phase
-    private javax.swing.JTextField iterationsTF;//iterations
+    private javax.swing.JLabel dxLabel;//dx
+    private javax.swing.JPanel filesPanel;//files
+    private javax.swing.JPanel phaseRetrievalPanel;//Phase Retrieval
+    private javax.swing.JPanel reconstructPanel;//reconstruct
+    private javax.swing.JButton pathSelectButton;// path ...
+    private javax.swing.JTextField pathTextField;// path text field
+    private javax.swing.JCheckBox phaseComboBox;// Phase
+    private javax.swing.JTextField iterationsTextField;//iterations
     //private javax.swing.JTextField ratioTF;
-    private javax.swing.JComboBox refCB;//Reference dropdown box
-    private javax.swing.JButton rholoB;//Reference ...
-    private javax.swing.JTextField wavelengthTF;//wavelength
-    private javax.swing.JTextField toleranceTF;//tollerance
-    private javax.swing.JTextField sigmaTF;//radius
+    private javax.swing.JComboBox referenceComboBox;//Reference dropdown box
+    private javax.swing.JButton refrenceSelectButton;//Reference ...
+    private javax.swing.JTextField wavelengthTextField;//wavelength
+    private javax.swing.JTextField toleranceTextField;//tollerance
+    private javax.swing.JTextField sigmaTextField;//radius
     // End of variables declaration                  
     
 }
