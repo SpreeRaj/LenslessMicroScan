@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HoloJ</title>
+<!-- Favicon icon -->
+<link rel="icon" type="image/png" sizes="16x16"
+	href="images/favicon.png">
+<!-- Custom Stylesheet -->
+<link
+	href="./plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+	rel="stylesheet">
+<!-- Page plugins css -->
+<link href="./plugins/clockpicker/dist/jquery-clockpicker.min.css"
+	rel="stylesheet">
+<!-- Color picker plugins css -->
+<link href="./plugins/jquery-asColorPicker-master/css/asColorPicker.css"
+	rel="stylesheet">
+<!-- Date picker plugins css -->
+<link href="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.css"
+	rel="stylesheet">
+<!-- Daterange picker plugins css -->
+<link href="./plugins/timepicker/bootstrap-timepicker.min.css"
+	rel="stylesheet">
+<link href="./plugins/bootstrap-daterangepicker/daterangepicker.css"
+	rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
+
+<!--upload links  -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="./js/postrequest.js"></script>
+<script src="./js/getrequest.js"></script>
+
+</head>
+
+<body>
+
+	<!--*******************
+        Preloader start
+    ********************-->
+	<div id="preloader">
+		<div class="loader">
+			<svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none"
+					stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+		</div>
+	</div>
+	<!--*******************
+        Preloader end
+    ********************-->
+
+
+	<!--**********************************
+        Main wrapper start
+    ***********************************-->
+	<div id="main-wrapper">
+
+		<!--**********************************
+            Nav header start
+        ***********************************-->
+		<div class="nav-header">
+			<div class="brand-logo">
+				<a href="index.html"> <b class="logo-abbr"><img
+						src="images/logo.png" alt=""> </b> <span class="logo-compact"><img
+						src="./images/logo-compact.png" alt=""></span> <span
+					class="brand-title"> <img src="images/logo-text.png" alt="">
+				</span>
+				</a>
+			</div>
+		</div>
+
+		<!--**********************************
+            Nav header end
+        ***********************************-->
+
+		<!--**********************************
+            Header start
+        ***********************************-->
+		<div class="header">
+			<div class="header-content clearfix">
+
+				<div class="nav-control">
+					<div class="hamburger">
+						<span class="toggle-icon"><i class="icon-menu"></i></span>
+					</div>
+				</div>
+				<div class="header-left">
+					<div class="input-group icons">
+						<div class="input-group-prepend">
+							<span
+								class="input-group-text bg-transparent border-0 pr-2 pr-sm-3"
+								id="basic-addon1"></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+		<!--**********************************
+            Sidebar start
+        ***********************************-->
+		<div class="nk-sidebar">
+			<div class="nk-nav-scroll">
+				<ul class="metismenu" id="menu">
+					<li><a href="./index.html">Home</a></li>
+					<li><a href="./form-picker.html">HoloJ</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+		<div class="content-body">
+
+			<!-- row -->
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<!-- test -->
+						<!-- <div class="container h-100">
+							<div class="row h-100 justify-content-center align-items-center">
+								<div class="col-sm-5">
+									<h3>Upload MultipartFile to FileSystem</h3>
+									<form >
+										<div class="form-group">
+											<label class="control-label" for="uploadfile">Upload
+												File:</label> <input type="file" class="form-control"
+												id="uploadfile" placeholder="Upload File" name="uploadfile"></input>
+										</div>
+
+										<button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
+										<button type="button" class="btn btn-default" id="btnGetFiles">Files</button>
+									</form>
+									<hr />
+									<div id="listFiles"></div>
+								</div>
+							</div>
+						</div> -->
+						<h4 class="card-title">Files</h4>
+						<div class="basic-form">
+							<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label>Hologram</label>
+										<div class="input-group">
+											<div class="custom-file">
+												
+											 <input type="file" class="form-control"
+												id="uploadfile" placeholder="Upload File" name="uploadfile"></input>
+										
+											</div>
+										</div>
+									</div>
+									<div class="form-group col-md-6">
+										<label>Reference</label>
+										<div class="input-group">
+											<div class="custom-file">
+												
+											 <input type="file" class="form-control"
+												id="uploadfile2" placeholder="Upload File" name="uploadfile2"></input>
+										
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<button type="reset" class="btn btn-dark">Reset File
+										List</button>&nbsp
+									<button type="submit" class="btn btn-dark" id="btnSubmit">Upload</button>
+									&nbsp	<button type="button" class="btn btn-dark" id="btnGetFiles">View File List</button>	
+								</div>
+							<div id="listFiles"></div>		
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Phase Retieval</h4>
+						<div class="basic-form">
+							<form>
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label>Tolerance</label> <input type="number"
+											class="form-control">
+									</div>
+									<div class="form-group col-md-6">
+										<label>Radius</label> <input type="number"
+											class="form-control">
+									</div>
+								</div>
+
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label>Iterations</label> <input type="number"
+											class="form-control">
+									</div>
+								</div>
+								<div class="form-row">
+									<button type="reset" class="btn btn-dark">Preview
+										Points</button>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Reconstruct</h4>
+						<div class="basic-form">
+							<form>
+								<div class="col-lg-12">
+									<div class="card">
+										<div class="card-body">
+											<h6 class="card-title">Extract:</h6>
+											<div class="basic-form">
+												<form>
+													<div class="form-group">
+														<div class="form-row">
+															<div class="form-check mb-3 col-md-4">
+																<label class="form-check-label"> <input
+																	type="checkbox" class="form-check-input" value="">Phase
+																</label>
+															</div>
+															<button type="reset" class="btn btn-dark  col-md-3">Reconstruct</button>
+														</div>
+														<div class="form-row">
+															<div class="form-check  mb-3 col-md-4">
+																<label class="form-check-label"> <input
+																	type="checkbox" class="form-check-input" value="">Amplitude
+																</label>
+															</div>
+
+														</div>
+														<div class="form-row">
+															<div class="form-check  mb-3 col-md-4">
+																<label class="form-check-label"> <input
+																	type="checkbox" class="form-check-input" value="">Butterworth
+																	Filter
+																</label>
+															</div>
+															<button type="reset" class="btn btn-dark  col-md-3">Numerical
+																Propagation</button>
+														</div>
+														<!--  add new row-->
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-4">
+										<label>dx</label> <input type="number" class="form-control">
+									</div>
+
+									<div class="form-group col-md-4">
+										<label>wavelength</label> <input type="number"
+											class="form-control">
+									</div>
+								</div>
+
+								<div class="form-row">
+									<div class="form-group col-md-4">
+										<label>dy</label> <input type="number" class="form-control">
+									</div>
+									<div class="form-group col-md-4">
+										<label>distance</label> <input type="number"
+											class="form-control">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-4">
+										<button type="reset" class="btn btn-dark">UnWrap</button>
+									</div>
+									<div class="form-group col-md-4">
+										<button type="reset" class="btn btn-dark">3D Graph</button>
+									</div>
+								</div>
+
+
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- #/ container -->
+		</div>
+		<!--**********************************
+            Content body end
+        ***********************************-->
+
+
+		<!--**********************************
+            Footer start
+        ***********************************-->
+
+		<!--**********************************
+            Footer end
+        ***********************************-->
+	</div>
+	<!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+	<!--**********************************
+        Scripts
+    ***********************************-->
+	<script src="plugins/common/common.min.js"></script>
+	<script src="js/custom.min.js"></script>
+	<script src="js/settings.js"></script>
+	<script src="js/gleek.js"></script>
+	<script src="js/styleSwitcher.js"></script>
+
+	<script src="./plugins/moment/moment.js"></script>
+	<script
+		src="./plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+	<!-- Clock Plugin JavaScript -->
+	<script src="./plugins/clockpicker/dist/jquery-clockpicker.min.js"></script>
+	<!-- Color Picker Plugin JavaScript -->
+	<script
+		src="./plugins/jquery-asColorPicker-master/libs/jquery-asColor.js"></script>
+	<script
+		src="./plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js"></script>
+	<script
+		src="./plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js"></script>
+	<!-- Date Picker Plugin JavaScript -->
+	<script
+		src="./plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<!-- Date range Plugin JavaScript -->
+	<script src="./plugins/timepicker/bootstrap-timepicker.min.js"></script>
+	<script src="./plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+	<script src="./js/plugins-init/form-pickers-init.js"></script>
+
+</body>
+
+</html>
