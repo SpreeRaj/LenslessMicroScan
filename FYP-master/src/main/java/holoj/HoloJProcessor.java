@@ -106,12 +106,13 @@ public class HoloJProcessor {
             this.imagPixels = new double[this.size];
             int var3;
             if (ijProc.getPixels() instanceof byte[]) {
+            	//var2 intensity i.e intensity of the image
                 byte[] var2 = (byte[])((byte[])ijProc.getPixels());
 
                 for(var3 = 0; var3 < this.size; ++var3) {
                     //this.realPixels[var3] = (double)(var2[var3] & 255);
-                    this.realPixels[var3] = Math.pow(0.5*((double)(var2[var3] & 255)),0.5);
-                    this.imagPixels[var3] = this.realPixels[var3];
+                    this.realPixels[var3] = Math.pow(0.5*((double)(var2[var3] & 255)),0.5);//intensity = z sqr
+                    this.imagPixels[var3] = this.realPixels[var3];// 255 for conversion signed to unsigned bits
                 }
 
                 this.setRealOrigin();
@@ -600,18 +601,18 @@ public class HoloJProcessor {
     }
 
     private void doRealToComplexFFT() {
-        FloatProcessor var1 = new FloatProcessor(this.width, this.height, this.realPixels);
-        FHT var2 = new FHT(var1);
+        FloatProcessor var1 = new FloatProcessor(this.width, this.height, this.realPixels);//floatFormatImange //realImage
+        FHT var2 = new FHT(var1);//hartleyTransform
         var2.transform();
-        double var3 = 1.0D / (double)this.width;
+        double var3 = 1.0D / (double)this.width;//scale
         var2.swapQuadrants();
-        float[] var5 = (float[])((float[])var2.getPixels());
+        float[] var5 = (float[])((float[])var2.getPixels());//ImageArray//we have fourier transform till here
 
         for(int var6 = 0; var6 < this.height; ++var6) {
-            int var7 = var6 * this.width;
+            int var7 = var6 * this.width;//row major format
 
             for(int var8 = 0; var8 < this.width; ++var8) {
-                int var9 = var7 + var8;
+                int var9 = var7 + var8;//position 
                 int var10 = (this.height - var6) % this.height * this.width + (this.width - var8) % this.width;
                 this.realPixels[var6 * this.width + var8] = var3 * 0.5D * (double)(var5[var9] + var5[var10]);
                 this.imagPixels[var6 * this.width + var8] = var3 * 0.5D * (double)(var5[var9] - var5[var10]);

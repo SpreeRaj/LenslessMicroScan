@@ -573,14 +573,14 @@ public final class HoloJUtils {
     }
 
     public static HoloJProcessor reconstruct(HoloJProcessor hologram,HoloJProcessor reference, double distance, double wavelength, int iterations, double tolerance, int radius){
-        HoloJProcessor recon = new HoloJProcessor(hologram);
+        HoloJProcessor recon = new HoloJProcessor(hologram);//to backup original reference
         HoloJProcessor ref = new HoloJProcessor(reference);
         recon = propogatefunc(recon,distance,wavelength);
         ref = propogatefunc(ref,distance,wavelength);
 
 
         //Building Mask
-        ImagePlus amplitude = recon.makeAmplitudeImage("Amplitude");
+        ImagePlus amplitude = recon.makeAmplitudeImage("Amplitude");//modulus of pixels
 
         ImageProcessor amplitudeProcessor = amplitude.getProcessor();
         MaximumFinder max = new MaximumFinder();
@@ -629,9 +629,10 @@ public final class HoloJUtils {
                 imag[j] = 1.0;
             }
         }
+      //create mask only once. Same mask can be used to propogate 
         holoMask.setImagPixelsArray(imag);
         holoMask.setRealPixelsArray(real);
-        double[] recIntensity = recon.getIntensity();
+        double[] recIntensity; //= recon.getIntensity();
         double recAvg=0.0;
         double scale;
 
@@ -652,7 +653,7 @@ public final class HoloJUtils {
             double realMult[] = new double[holoMask.getSize()];
             double imagMult[] = new double[holoMask.getSize()];
 
-
+            
             for(int j=0;j<recon.getSize();j++){
                 if( holoMask.realPixels[j]>0.0) { //inside mask
                     realMult[j] =  recon.realPixels[j];
@@ -666,7 +667,7 @@ public final class HoloJUtils {
             recon.setRealPixelsArray(realMult);
             recon.setImagPixelsArray(imagMult);
             recon = propogatefunc(recon,-distance,wavelength);
-
+            //uncomment
 //            for(int j=0;j<recon.getSize();j++){
 //                scale=Math.pow(Math.pow(hologram.realPixels[j],2)+Math.pow(hologram.imagPixels[j],2),0.5);
 //                scale=scale/(Math.pow(Math.pow(recon.realPixels[j],2)+Math.pow(recon.imagPixels[j],2),0.5));
@@ -716,7 +717,7 @@ public final class HoloJUtils {
      * @return propogated HOLOJ Processor
      */
 	public static HoloJProcessor propogatefunc(HoloJProcessor hologram, double distance, double wavelength) {
-            HoloJProcessor propagated = new HoloJProcessor(hologram);
+            HoloJProcessor propagated = new HoloJProcessor(hologram);//redundant
 			propagated.doFFT();
 			HoloJProcessor chirp = new HoloJProcessor(propagated.getWidth(), propagated.getHeight(), propagated.getDx(), propagated.getDy(), distance, wavelength);//THIS returns a HOLOJPROCESSOR with math Done
             propagated = multiply(chirp, propagated);

@@ -22,6 +22,7 @@ import ij.process.ImageProcessor;
  *
  * @author Johannes Schindelin
  */
+
 public class Reconstruct implements PlugInFilter {
 	protected ImagePlus image;
 
@@ -157,14 +158,15 @@ public class Reconstruct implements PlugInFilter {
 		String pluginsDir = url.substring("file:".length(), url.length() - clazz.getName().length() - ".class".length());
 		System.setProperty("plugins.dir", pluginsDir);
 
-		// start ImageJ
+		//1. start ImageJ
 		new ImageJ();
 
 		// open the sample
 		//ImagePlus image = IJ.openImage("/Users/andrewalken/Documents/Project/Intellij/FYP/src/main/resources/test.tif");
 		//image.show();
 
-		// run the plugin
+		//2. run the plugin
 		IJ.runPlugIn(clazz.getName(), "");
+		System.out.println();
 	}
 }
