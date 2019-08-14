@@ -30,13 +30,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- upload file  -->
+
+		<!-- upload file -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		
+
 		<!--ImageJ jars -->
 		<!-- https://mvnrepository.com/artifact/net.imagej/ij -->
 		<dependency>
@@ -44,7 +44,12 @@
 			<artifactId>ij</artifactId>
 			<version>1.52p</version>
 		</dependency>
-
+		<!-- auto refresh of server -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 
 	</dependencies>
 
