@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.microscope.lensless.LenslessMicroscopeApplication" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/LenslessMicroscopeApplication.java" 
+    binary="false" label="lenslessMicroscopeApplication" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="1168" width="0" x="0" y="267"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="1096" width="0" x="0" y="315"/>    
+    </execution>  
+  </object>  
+  <object id="47" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="6">      
+      <position height="24" width="0" x="0" y="351"/>    
+    </execution>  
+  </object>  
+  <object id="48" language="java" name="org.springframework.beans.factory.BeanFactory" 
+    project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar" 
+    binary="true" label="context" type="interface" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="8">      
+      <position height="24" width="0" x="0" y="399"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="24" width="0" x="0" y="591"/>    
+    </execution>    
+    <execution id="28">      
+      <position height="24" width="0" x="0" y="879"/>    
+    </execution>  
+  </object>  
+  <object id="49" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="10">      
+      <position height="24" width="0" x="0" y="447"/>    
+    </execution>  
+  </object>  
+  <object id="50" language="java" name="com.microscope.lensless.util.HoloJUtils" project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/util/HoloJUtils.java" binary="false" 
+    label="utils" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="12">      
+      <position height="24" width="0" x="0" y="495"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="24" width="0" x="0" y="783"/>    
+    </execution>    
+    <execution id="36">      
+      <position height="24" width="0" x="0" y="1113"/>    
+    </execution>  
+  </object>  
+  <object id="51" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="14">      
+      <position height="24" width="0" x="0" y="543"/>    
+    </execution>  
+  </object>  
+  <object id="52" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="hologram" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="18">      
+      <position height="24" width="0" x="0" y="639"/>    
+    </execution>  
+  </object>  
+  <object id="53" language="java" name="ij.ImagePlus" project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/net/imagej/ij/1.52p/ij-1.52p.jar" binary="true" label="hologramImage" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="20">      
+      <position height="24" width="0" x="0" y="687"/>    
+    </execution>  
+  </object>  
+  <object id="54" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="22">      
+      <position height="24" width="0" x="0" y="735"/>    
+    </execution>  
+  </object>  
+  <object id="55" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="26">      
+      <position height="24" width="0" x="0" y="831"/>    
+    </execution>  
+  </object>  
+  <object id="56" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="reference" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="30">      
+      <position height="24" width="0" x="0" y="927"/>    
+    </execution>  
+  </object>  
+  <object id="57" language="java" name="ij.ImagePlus" project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/net/imagej/ij/1.52p/ij-1.52p.jar" binary="true" label="refrenceImage" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="32">      
+      <position height="24" width="0" x="0" y="975"/>    
+    </execution>  
+  </object>  
+  <object id="58" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="34">      
+      <position height="24" width="0" x="0" y="1065"/>    
+    </execution>  
+  </object>  
+  <object id="59" language="java" name="java.io.PrintStream" project="LenslessMicroscopeWebApp" 
+    file="C:/Program Files/Java/jre1.8.0_221/lib/rt.jar" binary="true" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="38">      
+      <position height="24" width="0" x="0" y="1171"/>    
+    </execution>  
+  </object>  
+  <object id="60" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="reconstructImage" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="40">      
+      <position height="24" width="0" x="0" y="1219"/>    
+    </execution>    
+    <execution id="42">      
+      <position height="24" width="0" x="0" y="1267"/>    
+    </execution>    
+    <execution id="44">      
+      <position height="24" width="0" x="0" y="1315"/>    
+    </execution>    
+    <execution id="46">      
+      <position height="24" width="0" x="0" y="1363"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="61" interaction-operator="ALT">    
+    <interaction-operand id="62" constraint="hologram == null"/>    
+    <interaction-operand id="63" constraint="else">      
+      <fragment refId="35"/>      
+      <fragment refId="33"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <message id="3" 
+    operation="operate(java.lang.String,java.lang.String,double,double,double,double,double,int,int,boolean,boolean,boolean):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="getBean(java.lang.Class&lt;T&gt;):T" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="getImage(java.lang.String):ij.ImagePlus" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="getBean(java.lang.Class&lt;T&gt;):T" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" operation="createHoloJProcessorWithImage(ij.process.ImageProcessor,double,double):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="getProcessor():ij.process.ImageProcessor" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="23" operation="getImage(java.lang.String):ij.ImagePlus" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="27" operation="getBean(java.lang.Class&lt;T&gt;):T" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="29" operation="createHoloJProcessorWithImage(ij.process.ImageProcessor,double,double):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="30"/>  
+  </message>  
+  <message id="31" operation="getProcessor():ij.process.ImageProcessor" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="32"/>  
+  </message>  
+  <message id="33" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="34"/>  
+  </message>  
+  <message id="35" 
+    operation="reconstruct(com.microscope.lensless.models.HoloJProcessor,com.microscope.lensless.models.HoloJProcessor,double,double,int,double,int):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="36"/>  
+  </message>  
+  <message id="37" operation="println(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="38"/>  
+  </message>  
+  <message id="39" operation="setTitle(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="40"/>  
+  </message>  
+  <message id="41" operation="showHolo(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="42"/>  
+  </message>  
+  <message id="43" operation="getTitle():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="44"/>  
+  </message>  
+  <message id="45" operation="showAmplitude(java.lang.String):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="46"/>  
+  </message>
+</sequence-diagram>

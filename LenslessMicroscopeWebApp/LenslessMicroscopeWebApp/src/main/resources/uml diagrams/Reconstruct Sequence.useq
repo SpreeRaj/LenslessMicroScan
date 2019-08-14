@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.microscope.lensless.LenslessMicroscopeApplication" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/LenslessMicroscopeApplication.java" 
+    binary="false" label="&lt;static&gt;" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="492" width="0" x="0" y="89"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="420" width="0" x="0" y="137"/>    
+    </execution>  
+  </object>  
+  <object id="7" language="java" name="com.microscope.lensless.util.HoloJUtils" project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/util/HoloJUtils.java" binary="false" 
+    label="holoJUtils" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="6">      
+      <position height="360" width="0" x="0" y="173"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="24" width="0" x="0" y="269"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="24" width="0" x="0" y="377"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="24" width="0" x="0" y="485"/>    
+    </execution>  
+  </object>  
+  <object id="14" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="holoJProcessor" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>  
+  </object>  
+  <message id="3" 
+    operation="operate(java.lang.String,java.lang.String,double,double,double,double,double,int,int,boolean,boolean,boolean):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" 
+    operation="reconstruct(com.microscope.lensless.models.HoloJProcessor,com.microscope.lensless.models.HoloJProcessor,double,double,int,double,int):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="8" 
+    operation="propogatefunc(com.microscope.lensless.models.HoloJProcessor,double,double):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" 
+    operation="propogatefunc(com.microscope.lensless.models.HoloJProcessor,double,double):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" 
+    operation="buildMask(com.microscope.lensless.models.HoloJProcessor,com.microscope.lensless.models.HoloJProcessor,double,int,double,double,int):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>
+</sequence-diagram>

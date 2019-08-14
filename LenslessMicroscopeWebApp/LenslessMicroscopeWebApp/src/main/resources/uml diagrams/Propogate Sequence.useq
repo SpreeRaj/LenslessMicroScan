@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.microscope.lensless.util.HoloJUtils" project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/util/HoloJUtils.java" binary="false" 
+    label="holoJUtils" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="3584" width="0" x="0" y="221"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="3512" width="0" x="0" y="269"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="1092" width="0" x="0" y="1029"/>    
+    </execution>  
+  </object>  
+  <object id="65" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="operand1" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="44">      
+      <position height="24" width="0" x="0" y="1593"/>    
+    </execution>    
+    <execution id="48">      
+      <position height="24" width="0" x="0" y="1689"/>    
+    </execution>    
+    <execution id="52">      
+      <position height="24" width="0" x="0" y="1785"/>    
+    </execution>    
+    <execution id="54">      
+      <position height="24" width="0" x="0" y="1833"/>    
+    </execution>    
+    <execution id="58">      
+      <position height="24" width="0" x="0" y="1929"/>    
+    </execution>    
+    <execution id="60">      
+      <position height="24" width="0" x="0" y="1977"/>    
+    </execution>    
+    <execution id="62">      
+      <position height="24" width="0" x="0" y="2025"/>    
+    </execution>    
+    <execution id="64">      
+      <position height="24" width="0" x="0" y="2073"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="24" width="0" x="0" y="1065"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="24" width="0" x="0" y="1161"/>    
+    </execution>    
+    <execution id="30">      
+      <position height="24" width="0" x="0" y="1257"/>    
+    </execution>    
+    <execution id="32">      
+      <position height="24" width="0" x="0" y="1305"/>    
+    </execution>    
+    <execution id="36">      
+      <position height="24" width="0" x="0" y="1401"/>    
+    </execution>    
+    <execution id="38">      
+      <position height="24" width="0" x="0" y="1449"/>    
+    </execution>    
+    <execution id="40">      
+      <position height="24" width="0" x="0" y="1497"/>    
+    </execution>    
+    <execution id="42">      
+      <position height="24" width="0" x="0" y="1545"/>    
+    </execution>  
+  </object>  
+  <object id="66" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="operand2" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="46">      
+      <position height="24" width="0" x="0" y="1641"/>    
+    </execution>    
+    <execution id="50">      
+      <position height="24" width="0" x="0" y="1737"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="24" width="0" x="0" y="1113"/>    
+    </execution>    
+    <execution id="28">      
+      <position height="24" width="0" x="0" y="1209"/>    
+    </execution>  
+  </object>  
+  <object id="67" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="hologram" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="6">      
+      <position height="340" width="0" x="0" y="353"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="24" width="0" x="0" y="765"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="24" width="0" x="0" y="813"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="24" width="0" x="0" y="861"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="24" width="0" x="0" y="909"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="1624" width="0" x="0" y="2133"/>    
+    </execution>    
+    <execution id="73">      
+      <position height="612" width="0" x="0" y="2276"/>    
+    </execution>    
+    <execution id="75">      
+      <position height="768" width="0" x="0" y="2965"/>    
+    </execution>    
+    <execution id="105">      
+      <position height="24" width="0" x="0" y="3409"/>    
+    </execution>    
+    <execution id="107">      
+      <position height="24" width="0" x="0" y="3469"/>    
+    </execution>    
+    <execution id="109">      
+      <position height="24" width="0" x="0" y="3577"/>    
+    </execution>    
+    <execution id="111">      
+      <position height="24" width="0" x="0" y="3685"/>    
+    </execution>    
+    <execution id="97">      
+      <position height="24" width="0" x="0" y="3073"/>    
+    </execution>    
+    <execution id="99">      
+      <position height="24" width="0" x="0" y="3133"/>    
+    </execution>    
+    <execution id="101">      
+      <position height="24" width="0" x="0" y="3241"/>    
+    </execution>    
+    <execution id="103">      
+      <position height="24" width="0" x="0" y="3349"/>    
+    </execution>    
+    <execution id="69">      
+      <position height="24" width="0" x="0" y="496"/>    
+    </execution>    
+    <execution id="71">      
+      <position height="24" width="0" x="0" y="645"/>    
+    </execution>  
+  </object>  
+  <object id="112" language="java" name="ij.process.FloatProcessor" project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/net/imagej/ij/1.52p/ij-1.52p.jar" binary="true" label="hartleyTransform1" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="85">      
+      <position height="24" width="0" x="0" y="2552"/>    
+    </execution>  
+  </object>  
+  <object id="113" language="java" name="ij.process.FloatProcessor" project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/net/imagej/ij/1.52p/ij-1.52p.jar" binary="true" label="floatProcessor" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="87">      
+      <position height="24" width="0" x="0" y="2648"/>    
+    </execution>    
+    <execution id="77">      
+      <position height="24" width="0" x="0" y="2360"/>    
+    </execution>  
+  </object>  
+  <object id="114" language="java" name="ij.process.FHT" project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/net/imagej/ij/1.52p/ij-1.52p.jar" binary="true" label="hartleyTransform" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="89">      
+      <position height="24" width="0" x="0" y="2696"/>    
+    </execution>    
+    <execution id="91">      
+      <position height="24" width="0" x="0" y="2744"/>    
+    </execution>    
+    <execution id="93">      
+      <position height="24" width="0" x="0" y="2792"/>    
+    </execution>    
+    <execution id="95">      
+      <position height="24" width="0" x="0" y="2840"/>    
+    </execution>    
+    <execution id="79">      
+      <position height="24" width="0" x="0" y="2408"/>    
+    </execution>    
+    <execution id="81">      
+      <position height="24" width="0" x="0" y="2456"/>    
+    </execution>    
+    <execution id="83">      
+      <position height="24" width="0" x="0" y="2504"/>    
+    </execution>  
+  </object>  
+  <object id="115" language="java" name="org.springframework.beans.factory.BeanFactory" 
+    project="LenslessMicroscopeWebApp" 
+    file="C:/Users/tensa/.m2/repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar" 
+    binary="true" label="context" type="interface" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="8">      
+      <position height="24" width="0" x="0" y="717"/>    
+    </execution>    
+    <execution id="56">      
+      <position height="24" width="0" x="0" y="1881"/>    
+    </execution>    
+    <execution id="34">      
+      <position height="24" width="0" x="0" y="1353"/>    
+    </execution>  
+  </object>  
+  <object id="116" language="java" name="com.microscope.lensless.models.HoloJProcessor" 
+    project="LenslessMicroscopeWebApp" 
+    file="/LenslessMicroscopeWebApp/src/main/java/com/microscope/lensless/models/HoloJProcessor.java" binary="false" 
+    label="holoJProcessor" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>  
+  </object>  
+  <combined-fragment id="117" interaction-operator="ALT">    
+    <interaction-operand id="118" constraint="this.isRealOrigin">      
+      <fragment refId="86"/>      
+      <fragment refId="88"/>      
+      <fragment refId="92"/>      
+      <fragment refId="84"/>      
+      <fragment refId="72"/>      
+      <fragment refId="90"/>      
+      <fragment refId="78"/>      
+      <fragment refId="80"/>      
+      <fragment refId="76"/>      
+      <fragment refId="94"/>      
+      <fragment refId="82"/>    
+    </interaction-operand>    
+    <interaction-operand id="119" constraint="else">      
+      <fragment refId="98"/>      
+      <fragment refId="104"/>      
+      <fragment refId="110"/>      
+      <fragment refId="102"/>      
+      <fragment refId="108"/>      
+      <fragment refId="106"/>      
+      <fragment refId="74"/>      
+      <fragment refId="96"/>      
+      <fragment refId="100"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <combined-fragment id="120" interaction-operator="ALT">    
+    <interaction-operand id="121" constraint="this.isRealOrigin">      
+      <fragment refId="68"/>    
+    </interaction-operand>    
+    <interaction-operand id="122" constraint="else">      
+      <fragment refId="70"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <message id="3" 
+    operation="propogatefunc(com.microscope.lensless.models.HoloJProcessor,double,double):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="doFFT(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="7" operation="getBean(java.lang.Class&lt;T&gt;,java.lang.Object[]):T" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </message>  
+  <message id="9" operation="getWidth():int" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="11" operation="getHeight():int" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>  
+  <message id="13" operation="getDx():double" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="14"/>  
+  </message>  
+  <message id="15" operation="getDy():double" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="17" 
+    operation="multiply(com.microscope.lensless.models.HoloJProcessor,com.microscope.lensless.models.HoloJProcessor):com.microscope.lensless.models.HoloJProcessor" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="doFFT(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" operation="getRealPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="23" operation="getRealPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25" operation="getImagPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>  
+  <message id="27" operation="getImagPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="29" operation="getSize():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="30"/>  
+  </message>  
+  <message id="31" operation="getSize():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="32"/>  
+  </message>  
+  <message id="33" operation="getBean(java.lang.Class&lt;T&gt;,java.lang.Object[]):T" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="34"/>  
+  </message>  
+  <message id="35" operation="getWidth():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="36"/>  
+  </message>  
+  <message id="37" operation="getHeight():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="38"/>  
+  </message>  
+  <message id="39" operation="getDx():double" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="40"/>  
+  </message>  
+  <message id="41" operation="getDy():double" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="42"/>  
+  </message>  
+  <message id="43" operation="getRealPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="44"/>  
+  </message>  
+  <message id="45" operation="getRealPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="46"/>  
+  </message>  
+  <message id="47" operation="getImagPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="48"/>  
+  </message>  
+  <message id="49" operation="getImagPixels():double[]" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="50"/>  
+  </message>  
+  <message id="51" operation="getSize():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="52"/>  
+  </message>  
+  <message id="53" operation="getSize():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="54"/>  
+  </message>  
+  <message id="55" operation="getBean(java.lang.Class&lt;T&gt;,java.lang.Object[]):T" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="56"/>  
+  </message>  
+  <message id="57" operation="getWidth():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="58"/>  
+  </message>  
+  <message id="59" operation="getHeight():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="60"/>  
+  </message>  
+  <message id="61" operation="getDx():double" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="62"/>  
+  </message>  
+  <message id="63" operation="getDy():double" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="64"/>  
+  </message>  
+  <message id="68" operation="doRealToComplexFFT():void" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="69"/>  
+  </message>  
+  <message id="70" operation="doComplexToComplexFFT(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="71"/>  
+  </message>  
+  <message id="72" operation="doRealToComplexFFT():void" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="73"/>  
+  </message>  
+  <message id="74" operation="doComplexToComplexFFT(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="75"/>  
+  </message>  
+  <message id="76" operation="FloatProcessor(int,int,double[])" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="77"/>  
+  </message>  
+  <message id="78" operation="FHT(ij.process.ImageProcessor)" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="79"/>  
+  </message>  
+  <message id="80" operation="transform():void" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="81"/>  
+  </message>  
+  <message id="82" operation="swapQuadrants():void" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="83"/>  
+  </message>  
+  <message id="84" operation="getPixels():java.lang.Object" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="85"/>  
+  </message>  
+  <message id="86" operation="FloatProcessor(int,int,double[])" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="87"/>  
+  </message>  
+  <message id="88" operation="FHT(ij.process.ImageProcessor)" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="89"/>  
+  </message>  
+  <message id="90" operation="transform():void" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="91"/>  
+  </message>  
+  <message id="92" operation="swapQuadrants():void" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="93"/>  
+  </message>  
+  <message id="94" operation="getPixels():java.lang.Object" asynchronous="false">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="95"/>  
+  </message>  
+  <message id="96" operation="arrangeToComplexArray(double[],double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="97"/>  
+  </message>  
+  <message id="98" operation="c2cfft(double[],int[],int):void" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="99"/>  
+  </message>  
+  <message id="100" operation="extractRealPixels(double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="101"/>  
+  </message>  
+  <message id="102" operation="extractComplexPixels(double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="103"/>  
+  </message>  
+  <message id="104" operation="arrangeToComplexArray(double[],double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="105"/>  
+  </message>  
+  <message id="106" operation="c2cfft(double[],int[],int):void" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="107"/>  
+  </message>  
+  <message id="108" operation="extractRealPixels(double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="109"/>  
+  </message>  
+  <message id="110" operation="extractComplexPixels(double[]):double[]" asynchronous="false">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="111"/>  
+  </message>
+</sequence-diagram>
