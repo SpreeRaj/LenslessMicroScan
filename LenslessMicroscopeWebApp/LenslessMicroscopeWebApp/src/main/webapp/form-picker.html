@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,14 +50,6 @@
 	<!--*******************
         Preloader start
     ********************-->
-	<div id="preloader">
-		<div class="loader">
-			<svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none"
-					stroke-width="3" stroke-miterlimit="10" />
-            </svg>
-		</div>
-	</div>
 	<!--*******************
         Preloader end
     ********************-->
@@ -123,217 +116,170 @@
 				</ul>
 			</div>
 		</div>
-		<!--**********************************
-            Sidebar end
-        ***********************************-->
-
-		<!--**********************************
-            Content body start
-        ***********************************-->
 		<div class="content-body">
 
 			<!-- row -->
 			<div class="col-lg-12">
-				<div class="card">
-					<div class="card-body">
-						<!-- test -->
-						<!-- <div class="container h-100">
-							<div class="row h-100 justify-content-center align-items-center">
-								<div class="col-sm-5">
-									<h3>Upload MultipartFile to FileSystem</h3>
-									<form >
+				<div class="row">
+					<div class="card col-md-6">
+						<div class="card-body col-md-12">
+							<h4 class="card-title">Files</h4>
+							<div class="basic-form">
+								<form method="POST" enctype="multipart/form-data"
+									id="fileUploadForm">
+									<div class="form-row col-md-12">
+
+										<div class="form-group col-md-12">
+											<label>Hologram</label>
+											<div class="input-group">
+												<div class="custom-file">
+
+													<input type="file" class="form-control" id="uploadfile"
+														placeholder="Upload File" name="uploadfile"></input>
+
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-md-12">
+											<label>Reference</label>
+											<div class="input-group">
+												<div class="custom-file">
+
+													<input type="file" class="form-control" id="uploadfile2"
+														placeholder="Upload File" name="uploadfile2"></input>
+
+												</div>
+											</div>
+										</div>
 										<div class="form-group">
-											<label class="control-label" for="uploadfile">Upload
-												File:</label> <input type="file" class="form-control"
-												id="uploadfile" placeholder="Upload File" name="uploadfile"></input>
+											<button type="reset" class="btn btn-dark">Reset File
+												List</button>
 										</div>
+									</div>
 
-										<button type="submit" class="btn btn-default" id="btnSubmit">Upload</button>
-										<button type="button" class="btn btn-default" id="btnGetFiles">Files</button>
-									</form>
-									<hr />
 									<div id="listFiles"></div>
-								</div>
+								</form>
 							</div>
-						</div> -->
-						<h4 class="card-title">Files</h4>
-						<div class="basic-form">
-							<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
-								<div class="form-row">
-									<div class="form-group col-md-6">
-										<label>Hologram</label>
-										<div class="input-group">
-											<div class="custom-file">
-												
-											 <input type="file" class="form-control"
-												id="uploadfile" placeholder="Upload File" name="uploadfile"></input>
-										
-											</div>
-										</div>
-									</div>
-									<div class="form-group col-md-6">
-										<label>Reference</label>
-										<div class="input-group">
-											<div class="custom-file">
-												
-											 <input type="file" class="form-control"
-												id="uploadfile2" placeholder="Upload File" name="uploadfile2"></input>
-										
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<button type="reset" class="btn btn-dark">Reset File
-										List</button>&nbsp
-									<button type="submit" class="btn btn-dark" id="btnSubmit">Upload</button>
-									&nbsp	<button type="button" class="btn btn-dark" id="btnGetFiles">View File List</button>	
-								</div>
-							<div id="listFiles"></div>		
-							</form>
-						</div>
 
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Phase Retieval</h4>
-						<div class="basic-form">
-							<form>
-								<div class="form-row">
-									<div class="form-group col-md-6">
-										<label>Tolerance</label> <input type="number"
-											class="form-control">
-									</div>
-									<div class="form-group col-md-6">
-										<label>Radius</label> <input type="number"
-											class="form-control">
-									</div>
-								</div>
 
-								<div class="form-row">
-									<div class="form-group col-md-6">
-										<label>Iterations</label> <input type="number"
-											class="form-control">
+					<div class="card col-md-6">
+						<div class="card-body col-md-6">
+							<h4 class="card-title">Phase Retrieval</h4>
+							<div class="basic-form">
+								<form id="phaseRetrievalForm">
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<label>Tolerance</label> <input type="number"
+												class="form-control" name="tolerance" id="tolerance" value="3">
+										</div>
+										<div class="form-group col-md-12">
+											<label>Radius</label> <input type="number"
+												class="form-control" name="radius" id="radius" value="2">
+										</div>
 									</div>
-								</div>
-								<div class="form-row">
-									<button type="reset" class="btn btn-dark">Preview
-										Points</button>
-								</div>
-							</form>
+
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<label>Iterations</label> <input type="number"
+												class="form-control" name="iterations" id="iterations" value="1">
+										</div>
+									</div>
+									<!-- <div class="form-row">
+										<button type="reset" class="btn btn-dark">Preview
+											Points</button>
+									</div> -->
+								</form>
+							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 
-			<div class="col-lg-12">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Reconstruct</h4>
-						<div class="basic-form">
-							<form>
-								<div class="col-lg-12">
-									<div class="card">
-										<div class="card-body">
-											<h6 class="card-title">Extract:</h6>
-											<div class="basic-form">
-												<form>
-													<div class="form-group">
-														<div class="form-row">
-															<div class="form-check mb-3 col-md-4">
-																<label class="form-check-label"> <input
-																	type="checkbox" class="form-check-input" value="">Phase
-																</label>
-															</div>
-															<button type="reset" class="btn btn-dark  col-md-3">Reconstruct</button>
+			<div class="card">
+				<div class="card-body col-lg-12">
+					<h4 class="card-title">Reconstruct</h4>
+					<div class="row">
+						<div class="card col-md-6">
+							<div class="card-body col-md-12">
+								<div class="basic-form">
+									<form id="extractForm">
+										<div class="basic-form">
+											
+												<div class="form-group">
+													<h6 class="card-title">Extract:</h6>
+													<div class="form-row">
+														<div class="form-check mb-3 col-md-12">
+															<label class="form-check-label"> <input
+																type="checkbox" class="form-check-input" id="phase" value="">Phase
+															</label>
 														</div>
-														<div class="form-row">
-															<div class="form-check  mb-3 col-md-4">
-																<label class="form-check-label"> <input
-																	type="checkbox" class="form-check-input" value="">Amplitude
-																</label>
-															</div>
-
+														<div class="form-check mb-3 col-md-12">
+															<label class="form-check-label"> <input
+																type="checkbox" class="form-check-input" id="amplitude" value="">Amplitude
+															</label>
 														</div>
-														<div class="form-row">
-															<div class="form-check  mb-3 col-md-4">
-																<label class="form-check-label"> <input
-																	type="checkbox" class="form-check-input" value="">Butterworth
-																	Filter
-																</label>
-															</div>
-															<button type="reset" class="btn btn-dark  col-md-3">Numerical
-																Propagation</button>
+														<div class="form-check mb-3 col-md-12">
+															<label class="form-check-label"> <input
+																type="checkbox" class="form-check-input" id="butterworth" value="">Butterworth
+																Filter
+															</label>
 														</div>
-														<!--  add new row-->
+														<div class="form-check mb-3 col-md-12">
+															<label class="form-check-label">
+																<button type="submit" class="btn btn-dark"
+																	id="btnSubmit">Reconstruct</button>
+															</label>
+														</div>
 													</div>
-												</form>
-											</div>
+
+												</div>
+											
+											<!--  add new row-->
 										</div>
-									</div>
+									</form>
 								</div>
-								<div class="form-row">
-									<div class="form-group col-md-4">
-										<label>dx</label> <input type="number" class="form-control">
-									</div>
-
-									<div class="form-group col-md-4">
-										<label>wavelength</label> <input type="number"
-											class="form-control">
-									</div>
-								</div>
-
-								<div class="form-row">
-									<div class="form-group col-md-4">
-										<label>dy</label> <input type="number" class="form-control">
-									</div>
-									<div class="form-group col-md-4">
-										<label>distance</label> <input type="number"
-											class="form-control">
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="form-group col-md-4">
-										<button type="reset" class="btn btn-dark">UnWrap</button>
-									</div>
-									<div class="form-group col-md-4">
-										<button type="reset" class="btn btn-dark">3D Graph</button>
-									</div>
-								</div>
-
-
-							</form>
+								
+							</div>
 						</div>
+						
+							<div class="card col-md-6">
+								<div>&nbsp</div>
+								<div>&nbsp</div>
+				<form id="coordinatesForm">
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label>dx</label> <input type="number" class="form-control" id="dx" value="0.00000160">
+									</div>
 
+									<div class="form-group col-md-6">
+										<label>wavelength</label> <input type="number"
+											class="form-control" id="wavelength" value="0.00000663">
+									</div>
+								</div>
+
+								<div class="form-row">
+									<div class="form-group col-md-6">
+										<label>dy</label> <input type="number"  id="dy" class="form-control" value="0.00000160">
+									</div>
+									<div class="form-group col-md-6">
+										<label>distance</label> <input type="number" id="distance"
+											class="form-control" value="0.001">
+									</div>
+								</div>
+								</form>
+							</div>
+						
 					</div>
 				</div>
+				<!-- #/ container -->
 			</div>
-			<!-- #/ container -->
 		</div>
-		<!--**********************************
-            Content body end
-        ***********************************-->
-
-
-		<!--**********************************
-            Footer start
-        ***********************************-->
-
-		<!--**********************************
-            Footer end
-        ***********************************-->
 	</div>
-	<!--**********************************
-        Main wrapper end
-    ***********************************-->
 
-	<!--**********************************
-        Scripts
-    ***********************************-->
+
+
 	<script src="plugins/common/common.min.js"></script>
 	<script src="js/custom.min.js"></script>
 	<script src="js/settings.js"></script>

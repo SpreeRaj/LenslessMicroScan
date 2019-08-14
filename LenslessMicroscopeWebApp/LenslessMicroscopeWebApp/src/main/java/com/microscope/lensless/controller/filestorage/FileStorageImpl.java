@@ -22,11 +22,14 @@ public class FileStorageImpl implements FileStorage{
 	private final Path rootLocation = Paths.get("filestorage");
  
 	@Override
-	public void store(MultipartFile file){
+	public void store(MultipartFile file , String newFileName){
 		try {
-            Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-        } catch (Exception e) {
-        	throw new RuntimeException("FAIL! -> message = " + e.getMessage());
+			//System.out.println(file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf('.')));
+            String extension=file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf('.'));
+			Files.copy(file.getInputStream(), this.rootLocation.resolve(newFileName+extension));
+			//this.rootLocation.
+		} catch (Exception e) {
+        	throw new RuntimeException("Failed to store ! -> message = " + e.getMessage());
         }
 	}
 	
@@ -41,7 +44,7 @@ public class FileStorageImpl implements FileStorage{
             	throw new RuntimeException("FAIL!");
             }
         } catch (MalformedURLException e) {
-        	throw new RuntimeException("Error! -> message = " + e.getMessage());
+        	throw new RuntimeException("Error in loading file ! -> message = " + e.getMessage());
         }
     }
     
@@ -67,7 +70,13 @@ public class FileStorageImpl implements FileStorage{
                 .map(this.rootLocation::relativize);
         }
         catch (IOException e) {
-        	throw new RuntimeException("\"Failed to read stored file");
+        	throw new RuntimeException("\"Failed to read stored files");
         }
 	}
+
+	public Path getRootLocation() {
+		return rootLocation;
+	}
+	
+	
 }
