@@ -40,9 +40,9 @@ public class HoloJUtils implements ApplicationContextAware {
 	public ImagePlus getImage(String imagePath) {
 		System.out.println("	a. Inside getImage()");
 		//imagePath.replaceAll("/", "\\");
-		String dir = imagePath.substring(0, imagePath.lastIndexOf('\\'));
+		String dir = imagePath.substring(0, imagePath.lastIndexOf('/'));
 		System.out.println("	b. dir--> " + dir);
-		String name = imagePath.substring(imagePath.lastIndexOf('\\') + 1, imagePath.length());
+		String name = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.length());
 		System.out.println("	c. image path--> " + name);
 		ImagePlus imp;
 

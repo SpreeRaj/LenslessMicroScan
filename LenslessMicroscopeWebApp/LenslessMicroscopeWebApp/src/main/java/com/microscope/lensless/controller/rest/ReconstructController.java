@@ -53,8 +53,8 @@ public class ReconstructController  {
     		}
     	}
     	System.out.println(rootPath);
-    	hologramPath="R:\\College\\Project\\Matlab_CODE\\Matlab_CODE\\Petri_dish_simulation_lensfree_hologram.tif";
-    	referencePath="R:\\College\\Project\\Matlab_CODE\\Matlab_CODE\\Petri_dish_simulation_lensfree_hologram.tif";
+    	//hologramPath="R:\\College\\Project\\Matlab_CODE\\Matlab_CODE\\Petri_dish_simulation_lensfree_hologram.tif";
+    	//referencePath="R:\\College\\Project\\Matlab_CODE\\Matlab_CODE\\Petri_dish_simulation_lensfree_hologram.tif";
     	//Paths.
     	System.out.println(formdata);
     	reconstructImage.startPlugin();
